@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<prerequisites>
+		<maven>3.0.0</maven>
+	</prerequisites>
+
+	<groupId>com.icodeuplay</groupId>
+	<artifactId>master-project</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Master Project</name>
+	<description>Defines the parent project for all others projects</description>
+
+	<organization>
+		<name>iCodeUPlay</name>
+		<url>http://www.icodeuplay.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>marciobarroso</id>
+			<name>Marcio Barroso</name>
+			<email>marciobarroso@gmail.com</email>
+			<organization>iCodeUplay</organization>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		
+		<dependencies>
+
+			<!-- JUNIT -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- spring framework for test -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- LOG -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.jnlp</groupId>
+				<artifactId>jnlp-api</artifactId>
+				<version>${jnlp.version}</version>
+				<scope>system</scope>
+				<systemPath>${JAVA_HOME}/lib/javaws.jar</systemPath>
+			</dependency>
+
+			<dependency>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr4-runtime</artifactId>
+				<version>${antlr.version}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>${velocity.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+				<version>${org.eclipse.swt.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+			<dependency>
+			    <groupId>javax.mail</groupId>
+			    <artifactId>mail</artifactId>
+			    <version>${javax.mail.version}</version>
+			    <exclusions>
+					<exclusion>
+						<artifactId>activation</artifactId>
+						<groupId>javax.activation</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+
+			<dependency>
+			    <groupId>commons-configuration</groupId>
+			    <artifactId>commons-configuration</artifactId>
+			    <version>${commons-configuration.version}</version>
+			    <exclusions>
+			    	<exclusion>
+	          			<groupId>commons-lang</groupId>
+	          			<artifactId>commons-lang</artifactId>
+	        		</exclusion>
+			    </exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons-lang.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>${commons-io.version}</version>
+			</dependency>
+			
+			<dependency>
+		         <groupId>org.reflections</groupId>
+		         <artifactId>reflections</artifactId>
+		         <version>${org.reflections.version}</version>
+		   	</dependency>
+
+		   	<dependency>
+				<groupId>com.sun.jna</groupId>
+				<artifactId>jna</artifactId>
+				<version>${com.sun.jna.version}</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<profiles />
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.12</junit.version>
+		<spring.version>4.0.0.RELEASE</spring.version>
+		<log4j.version>2.5</log4j.version>
+		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+		<maven-war-plugin.version>2.1.1</maven-war-plugin.version>
+		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+		<maven-compiler-plugin.level>1.8</maven-compiler-plugin.level>
+		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
+		<maven-source-plugin.version>2.1.2</maven-source-plugin.version>
+		<maven-javadoc-plugin.version>2.8</maven-javadoc-plugin.version>
+		<maven-release-plugin.version>2.3.2</maven-release-plugin.version>
+		<maven-clean-plugin.version>2.4.1</maven-clean-plugin.version>
+		<maven-site-plugin.version>3.1</maven-site-plugin.version>
+		<wagon-http-lightweight.version>2.4</wagon-http-lightweight.version>
+		<wagon-ssh.version>2.4</wagon-ssh.version>
+		<build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
+		<webstart-maven-plugin.version>1.0-beta-1</webstart-maven-plugin.version>
+		<ant-contrib.version>20020829</ant-contrib.version>
+		<ant-nodeps.version>1.8.1</ant-nodeps.version>
+		<antlr.plugin.generate.visitor>true</antlr.plugin.generate.visitor>
+		<antlr.plugin.generate.listener>true</antlr.plugin.generate.listener>
+		<antlr.plugin.generate.dot>false</antlr.plugin.generate.dot>
+		<maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
+		<cxf.version>2.6.2</cxf.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
+		<commons-configuration.version>1.10</commons-configuration.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-io.version>2.5</commons-io.version>
+		<org.reflections.version>0.9.10</org.reflections.version>
+		<com.sun.jna.version>3.0.9</com.sun.jna.version>
+		<jnlp.version>7.0</jnlp.version>
+
+		<antlr.version>4.5</antlr.version>
+		<velocity.version>1.7</velocity.version>
+		<org.eclipse.swt.version>4.3</org.eclipse.swt.version>
+	</properties>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+					<exclude>**/*.g4</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven-war-plugin.version}</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${maven-compiler-plugin.level}</source>
+						<target>${maven-compiler-plugin.level}</target>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+						<compilerArguments>
+							<Xlint />
+						</compilerArguments>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>${maven-eclipse-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>${build-helper-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven-site-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>${maven-antrun-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo.webstart</groupId>
+					<artifactId>webstart-maven-plugin</artifactId>
+					<version>${webstart-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.antlr</groupId>
+					<artifactId>antlr4-maven-plugin</artifactId>
+					<version>${antlr.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${maven-shade-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.cxf</groupId>
+					<artifactId>cxf-codegen-plugin</artifactId>
+					<version>${cxf.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.cxf</groupId>
+							<artifactId>cxf-rt-frontend-jaxws</artifactId>
+							<version>${cxf.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.cxf</groupId>
+							<artifactId>cxf-rt-transports-http</artifactId>
+							<version>${cxf.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<!--plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+					<configuration>
+						<tagBase>${scm.server}/${project.artifactId}/tags</tagBase>
+						<tagNameFormat>${project.artifactId}-@{project.version}</tagNameFormat>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<useEditMode>true</useEditMode>
+						<goals>deploy</goals>
+						<useReleaseProfile>false</useReleaseProfile>
+					</configuration>
+				</plugin-->
+
+			</plugins>
+		</pluginManagement>
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-http-lightweight</artifactId>
+				<version>${wagon-http-lightweight.version}</version>
+			</extension>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>${wagon-ssh.version}</version>
+			</extension>
+		</extensions>
+
+	</build>
+
+	<repositories>
+
+		<repository>
+			<id>central</id>
+			<name>central</name>
+			<url>http://central.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>jboss.developer.group</id>
+			<name>jboss.developer.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/developer/</url>
+		</repository>
+		<repository>
+			<id>jboss.ea.group</id>
+			<name>jboss.ae.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+		</repository>
+		<repository>
+			<id>jboss.fs.public.group</id>
+			<name>jboss.fs.public.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
+		</repository>
+		<repository>
+			<id>jboss.m2.proxy.group</id>
+			<name>jboss.m2.proxy.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/m2-proxy/</url>
+		</repository>
+		<repository>
+			<id>jboss.public.group</id>
+			<name>jboss.public.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>jboss.public.nexus</id>
+			<name>jboss.public.nexus</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+		</repository>
+		<repository>
+			<id>maven.atlassian.com</id>
+			<name>maven.atlassian.com</name>
+			<url>http://maven.atlassian.com/repository/public</url>
+		</repository>
+		<repository>
+			<id>googlecode.com</id>
+			<name>googlecode.com</name>
+			<url>http://google-maven-repository.googlecode.com/svn/repository/</url>
+		</repository>
+		<repository>
+			<id>artifactoryonline.com</id>
+			<name>artifactoryonline.com</name>
+			<url>http://gradle.artifactoryonline.com/gradle/libs/</url>
+		</repository>
+		<repository>
+			<id>maven.org</id>
+			<name>maven.org</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>openqa.org</id>
+			<name>openqa.org</name>
+			<url>http://nexus.openqa.org/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>springframework.org</id>
+			<name>springframework.org</name>
+			<url>http://maven.springframework.org/release/</url>
+		</repository>
+		<repository>
+			<id>sonatype.org</id>
+			<name>sonatype.org</name>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>Repo1 Maven</id>
+			<name>Repo1 Maven</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>Selenium</id>
+			<name>Selenium</name>
+			<url>http://repo1.maven.org/maven2/org/seleniumhq/selenium/</url>
+		</repository>
+		<repository>
+			<id>Ibiblio</id>
+			<name>Ibiblio</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+		</repository>
+		<repository>
+			<id>jvnet-nexus-releases</id>
+			<name>jvnet-nexus-releases</name>
+			<url>https://maven.java.net/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>primefaces</id>
+			<name>primefaces</name>
+			<url>http://repository.primefaces.org/</url>
+		</repository>
+		<repository>
+			<id>terracotta-releases</id>
+			<url>http://www.terracotta.org/download/reflector/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+			<id>ibm-maven-repo</id>
+			<name>ibm-maven-repo</name>
+			<url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+
+		<pluginRepository>
+			<id>central</id>
+			<name>central</name>
+			<url>http://central.maven.org/maven2/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.developer.group</id>
+			<name>jboss.developer.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/developer/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.ea.group</id>
+			<name>jboss.ae.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.fs.public.group</id>
+			<name>jboss.fs.public.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.m2.proxy.group</id>
+			<name>jboss.m2.proxy.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/m2-proxy/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.public.group</id>
+			<name>jboss.public.group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.public.nexus</id>
+			<name>jboss.public.nexus</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven.atlassian.com</id>
+			<name>maven.atlassian.com</name>
+			<url>http://maven.atlassian.com/repository/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>googlecode.com</id>
+			<name>googlecode.com</name>
+			<url>http://google-maven-repository.googlecode.com/svn/repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>artifactoryonline.com</id>
+			<name>artifactoryonline.com</name>
+			<url>http://gradle.artifactoryonline.com/gradle/libs/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven.org</id>
+			<name>maven.org</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>openqa.org</id>
+			<name>openqa.org</name>
+			<url>http://nexus.openqa.org/content/repositories/releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>springframework.org</id>
+			<name>springframework.org</name>
+			<url>http://maven.springframework.org/release/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype.org</id>
+			<name>sonatype.org</name>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Repo1 Maven</id>
+			<name>Repo1 Maven</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Selenium</id>
+			<name>Selenium</name>
+			<url>http://repo1.maven.org/maven2/org/seleniumhq/selenium/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Ibiblio</id>
+			<name>Ibiblio</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jvnet-nexus-releases</id>
+			<name>jvnet-nexus-releases</name>
+			<url>https://maven.java.net/content/repositories/releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>primefaces</id>
+			<name>primefaces</name>
+			<url>http://repository.primefaces.org/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+			<id>ibm-maven-repo</id>
+			<name>ibm-maven-repo</name>
+			<url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+		</pluginRepository>
+
+	</pluginRepositories>
+
+</project>
