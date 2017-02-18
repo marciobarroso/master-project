@@ -1,0 +1,9 @@
+*DS_Store
+.settings
+*/bin
+*/target
+.project
+.classpath
+code-generator-ideal-program/src/main/resources/config.properties
+code-generator-ideal-program/src/main/resources/filter.txt
+code-generator-project/code-generator-ideal-program/code-generator-ideal-program.jpr
